@@ -13,10 +13,10 @@ def index():
     try:
         raise Exception("We are testing custome message ")
     except Exception as e:
-        housing=HousingException(e,sys)
-        logging.info(housing_error_message)
-
-    logging.info("we are testing logging module")
+        housing = HousingException(e,sys)
+        logging.info(housing.error_message)
+        logging.info("we are testing logging module")
+        
     return "Hello this is Yuvraj Kishor Narwade"
 
 
