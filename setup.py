@@ -3,10 +3,9 @@ from typing import List
 
 #Declearing variable for setup function
 PROJECT_NAME="housing prediction"
-VERSION="0.0.1"
+VERSION="0.0.5"
 AUTHOR="YK Narwade"
 DESCRIPTION="this is first housing project"
-PACKAGES="housing"
 REQUIREMENT_FILE_NAME="requirements.txt"
 
 
@@ -19,7 +18,7 @@ def get_requirements_list()->List[str]:
 
 
     with open (REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines()
+        return requirement_file.readlines().remove("-e .")
     
 
 
@@ -29,7 +28,6 @@ name=PROJECT_NAME,
 version=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
-packages=PACKAGES,
+packages=find_packages(),
 install_requires=get_requirements_list()
-
 )
